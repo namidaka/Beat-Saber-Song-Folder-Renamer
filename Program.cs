@@ -50,9 +50,9 @@ namespace BSSFR
             string[] lines = text.Split(splitter);
 
             SongInfo songInfo = new SongInfo();
-            string author = lines[4].Split(':')[1].Trim().Remove(0, 1).Trim();
-            if (author.Length == 0)  { author = "Unknown Author"; } 
-            songInfo.Author = RemoveInvalidChars(author);
+            string mapper = lines[4].Split(':')[1].Trim().Remove(0, 1).Trim();
+            if (mapper.Length == 0)  { mapper = "Unknown Mapper"; } 
+            songInfo.Mapper = RemoveInvalidChars(mapper);
             //Console.WriteLine(author);
 
             
@@ -61,9 +61,9 @@ namespace BSSFR
             songInfo.SongName = RemoveInvalidChars(songName);
            //Console.WriteLine(songName);   
 
-           string mapper = lines[3].Split(':')[1].Trim().Remove(0, 1).Trim();
-            if (mapper.Length == 0) { mapper = "Unknown Mapper"; }
-            songInfo.Mapper = RemoveInvalidChars(mapper);
+           string author = lines[3].Split(':')[1].Trim().Remove(0, 1).Trim();
+            if (author.Length == 0) { author = "Unknown Author"; }
+            songInfo.Author = RemoveInvalidChars(author);
            //Console.WriteLine(mapper);
 
             return songInfo;
